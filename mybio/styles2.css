@@ -1,0 +1,80 @@
+
+.disc {
+        width: 600px;
+        border: 10px;
+        font-family: cursive;
+        padding: 25px;
+        background-color: #00CED1;
+        color: FireBrick;
+        margin: 15px auto;
+}
+.putt{
+       width: 500px;
+       border: 10px;
+       background-color: #BDB76B;
+       padding: 7px;
+       margin: 15px auto;
+}
+.yoga {
+        font-size: x-large
+        width: 200px
+        border: 150px;
+        padding: 20px;
+        background-color: #3d9135;
+        color: #b290ce;
+        margin:  10px auto;
+}
+.ygpurpose{
+            font-size: large
+            font-family: Georgia, serif;
+            background-color: #3c8c5a;
+            color: #ce9790;
+            margin:  10px auto;
+}
+.cobcottage{
+            width: 20px
+            border: 15px;
+            padding: 20px;
+            background-color: DodgerBlue;
+            color: FireBrick;
+            margin:  10px auto;
+
+}
+.lotus {
+        width: 200px;
+        border: 150px;
+        padding: 20px;
+        background-color: Gainsboro;
+        margin:  10px auto;
+}
+.nb {
+        width: 1200px
+        border: 150px;
+        padding: 200px;
+        background-color: DarkSeaGreen;
+        color: DarkSlateGray;
+        margin:  10px auto;
+}
+.content{
+  float: left;
+  width: 70%;
+  height: 90%;
+  background-color: #F5CF8E; 
+}
+.sidebar{
+  text-size: xx-large;
+  float: right;
+  width: 30%;                  
+  height: 15%;
+  background-color: #F09A9D;
+}
+.header{
+  height: 100px;
+  background-color: #B2D6FF;
+}
+.footer{
+  clear: both;
+  height: 200px;
+  background-color: #D6E9FE;  
+
+}
