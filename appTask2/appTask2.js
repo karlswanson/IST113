@@ -44,7 +44,7 @@ function addTask(content) {
 	taskElement.data("task",taskID) 
 	let checkBox = $("<input type='checkbox' />").appendTo(taskElement);
 	checkBox.click(function(){
-		$( "input:checked").remove()	
+		$("input:checked").parent().remove()	
 		listItems.splice($(this).parent().data("task"),1)
 		localStorage.setItem("task", JSON.stringify(listItems))
 	})
