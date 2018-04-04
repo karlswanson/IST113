@@ -5,15 +5,14 @@ function testDom() {
   $("#buttonElement").on("click", function() {
     let contentValue = $("#inputContent").val();
 	addTask(contentValue)
-	inputContent.on( "click", ".delete-button", function(){
-  $(this).parent().remove();
-	})
+	
   });
   
  
   $("#deletebutton").on("click", function() {
     
     let $lastItem = $("#listOne li").remove();
+	localStorage.remove("task")
     
   });
  
@@ -55,4 +54,4 @@ function addTask(content) {
 	localStorage.setItem("task", JSON.stringify(listItems))
 	//var jsonstring = json.stringify(array)
 	//save the string in the local storage
-	
+}
