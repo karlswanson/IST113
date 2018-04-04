@@ -1,0 +1,4 @@
+make an array | var arr = []
+make an id for tasks | var taskID = 0
+when a task is saved add the value to the array at the current task id | arr[taskID] = textContent
+after saving incriment the task id by 1

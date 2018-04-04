@@ -1,49 +1,59 @@
-/* 
- Let's update our functions to use jQuery to manipulate DOM nodes
-*/
+
 function testDom() {
 
-  // We'll add a listener to our create element button
-  $("#buttonElement").on("click", function() {
-    
-    // pulling elements from our array
-    let classValue = $("#inputClass").val();
-    let contentValue = $("#inputContent").val();
-
-    // jQuery element creation uses HTML tags
-    // We'll set the text value when we create the object
-    $newElem = $("<li></li>").text(contentValue);
   
-    // we can add click listeners as well
-    // in this case, we're going to make each new item removable
-    $newElem.on("click", function() {
-      
-	  $(this).remove();
-
-    });
-    
-    // then we can add a class
-    // $newElem.addClass(classValue);
-
-    // we have an element, but it isn't part of the DOM yet. 
-    // For now, we'll append it to the end of our page div 
-    $("#listOne").append($newElem);
+  $("#buttonElement").on("click", function() {
+    let contentValue = $("#inputContent").val();
+	addTask(contentValue)
+	inputContent.on( "click", ".delete-button", function(){
+  $(this).parent().remove();
+	})
   });
   
-  // We'll add a listener to our swap button
+ 
   $("#deletebutton").on("click", function() {
     
-    let $lastItem = $("#listOne li:last").remove();
+    let $lastItem = $("#listOne li").remove();
     
   });
-  
-  // jQuery's each function will let us run the same 
-  //   function across all selected elements
- /* $("#buttonEach").on("click", function() {
-    $("#listTwo li").each(function() {
-      $(this).detach().appendTo("#listOne");  
-    });
-  });*/
+ 
 }
 
+//var this = testThis ? yessothis : thisbecausefalse
+
 testDom();
+var listItems = [];
+
+if (localStorage.getItem("task") !== null) {
+	let myItemString = localStorage.getItem("task")
+	listItems = JSON.parse(myItemString)
+	$(listItems).each(function() {
+		addTask(this);
+	});
+}
+else{
+	listItems = []
+}
+
+//this.parentElement.remove()
+var taskID = 0
+
+function addTask(content) {
+	listItems[taskID] = content;
+	let taskElement = $("<li></li>").text(content);
+	taskElement.data("task",taskID) 
+	let checkBox = $("<input type='checkbox' />").appendTo(taskElement);
+	checkBox.click(function(){
+		$( "input:checked").remove()	
+		listItems.splice($(this).parent().data("task"),1)
+		localStorage.setItem("task", JSON.stringify(listItems))
+	})
+	
+    $("#listOne").append(taskElement);
+	console.log(listItems)
+	taskID++
+	localStorage.setItem("task", JSON.stringify(listItems))
+	//var jsonstring = json.stringify(array)
+	//save the string in the local storage
+	
+}
