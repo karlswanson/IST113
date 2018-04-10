@@ -1,0 +1,18 @@
+label {
+  width: 150px;
+  display: inline-block;
+}
+
+fieldset {
+  width: 400px;
+}
+
+#sesame {
+	display: none;
+}
+
+div {
+  background-color: green;
+  overflow: hidden;
+}
+
